@@ -7,28 +7,30 @@
 #' @return If a database with the corresponding searched name
 #'         is found, it's name is returned. If not, nothing is returned.
 #' @examples{
-#'   search_artist("chico")
+#'   search_data("chico")
 #'   \dontshow{
-#'   search_artist("jorge")
+#'   search_data("jorge")
 #'   }
 #'  }
 #' @export
 #'
 #'
 
-search_artist <- function(name){
-
+search_data <- function(name){
   av_data <- data(package = "choRds")$results[ ,3]
 
   for(i in 1:length(av_data)){
     cond <- grepl(name, av_data[i])
-    data(alceu_valenca)
+
     if(cond == TRUE){
       print(av_data[i])
+      test <- 1
     } else {
-      print("Name not found.")
+      test <- 0
     }
   }
 
+  if(test == 0){
+    print("End of research.") }
 }
 
