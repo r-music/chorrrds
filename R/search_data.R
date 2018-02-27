@@ -2,7 +2,7 @@
 #'
 #' Search artists in the available package database.
 #'
-#' @param name character.
+#' @param name character. The searched artist's name.
 #'
 #' @return If a database with the corresponding searched name
 #'         is found, it's name is returned. If not, nothing is returned.

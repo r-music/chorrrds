@@ -576,7 +576,7 @@
 #' }
 "felipe_araujo"
 
-#' fernado_sorocaba
+#' fernando_sorocaba
 #'
 #' Data with information about the music chords of Fernando & Sorocaba.
 #'
@@ -591,7 +591,7 @@
 #'   \item{\code{key}}{factor. The key for each music.}
 #'   \item{\code{artist}}{factor. The name of the artist}
 #' }
-"fernado_sorocaba"
+"fernando_sorocaba"
 
 #' fundo_quintal
 #'
@@ -1731,7 +1731,7 @@
 #'   \item{\code{key}}{factor. The key for each music.}
 #'   \item{\code{artist}}{factor. The name of the artist}
 #' }
-"ze-neto-cristiano"
+"ze_neto_cristiano"
 
 #' ze_ramalho
 #'
