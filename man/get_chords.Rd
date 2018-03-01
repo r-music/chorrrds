@@ -9,13 +9,20 @@ get_chords(songs, nf = FALSE)
 \arguments{
 \item{songs}{character. The song url.}
 
-\item{nf}{TRUE of FALSE. If the chords of a song are not found, 
+\item{nf}{TRUE of FALSE. If the chords of a song are not found,
 should we return this information on the database?}
 }
 \value{
-A database with the chords of the input songs, if 
+A database with the chords of the input songs, if
 found.
 }
 \description{
 Get songs names from an artist.
+}
+\examples{
+{
+  songs <- choRds::get_songs("chico-buarque")
+  get_chords(songs$url[1])
+  get_chords(songs$url[1])
+  }
 }
