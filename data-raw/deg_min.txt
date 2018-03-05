@@ -1,0 +1,8 @@
+"degree","A","E","B","F.sharp","C.sharp","G.sharp","A.flat","D.sharp","E.flat","A.sharp","B.flat","F","C","G","D"
+"1","I","A","E","B","F#","C#","G#","Ab","D#","Eb","A#","Bb","F","C","G","D"
+"2","II","B","F#","C#","G#","D#","A#","Bb","E#","F","B#","C","G","D","A","E"
+"3","III","C","G","D","A","E","B","Cb","F#","Gb","C#","Db","Ab","Eb","Bb","F"
+"4","IV","D","A","E","B","F#","C#","Db","G#","Ab","D#","Eb","Bb","F","C","G"
+"5","V","E","B","F#","C#","G#","D#","Eb","A#","Bb","E#","F","C","G","D","A"
+"6","VI","F","C","G","D","A","E","Fb","B","Cb","F#","Gb","Db","Ab","Eb","Bb"
+"7","VII","G","D","A","E","B","F#","Gb","C#","Db","G#","Ab","Eb","Bb","F","C"

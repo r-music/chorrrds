@@ -4,9 +4,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -15,15 +15,45 @@
 #' }
 "all"
 
+#' eqv
+#'
+#' Accessory data for the recognition of equivalent keys, including major
+#' and minor relatives.
+#'
+#' @format A data frame with 3 variables:
+#' \describe{
+#'   \item{\code{key}}{factor. Keys ordened by the circle of fifths.}
+#'   \item{\code{minor.rel}}{factor. Relative minors of the key
+#'   in the previous column. }
+#'   \item{\code{rep}}{num. A number indicating if the key scale is
+#'   equivalent to some other; repeated numbers indicate equivalent
+#'   keys. }
+#' }
+"eqv"
+
+#' deg_min
+#'
+#' Accessory data with the chords present in each scale, with
+#' its respective degrees, for the minor cases.
+#'
+"deg_min"
+
+#' deg_maj
+#'
+#' Accessory data with the chords present in each scale, with
+#' its respective degrees, for the minor cases.
+#'
+"deg_maj"
+
 #' ad_calcanhotto
 #'
 #' Data with information about the music chords of Adriana Calcanhotto.
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer. The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -38,9 +68,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -55,9 +85,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -72,9 +102,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -89,9 +119,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -106,9 +136,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -123,9 +153,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -140,9 +170,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -157,9 +187,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -174,9 +204,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -191,9 +221,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -207,9 +237,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -224,9 +254,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -241,9 +271,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -258,9 +288,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -275,9 +305,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -292,9 +322,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -310,9 +340,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -327,9 +357,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -344,9 +374,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -361,9 +391,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -378,9 +408,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -395,9 +425,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -412,9 +442,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -429,9 +459,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -446,9 +476,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -463,9 +493,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -480,9 +510,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -497,9 +527,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -514,9 +544,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -531,9 +561,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -548,9 +578,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -565,9 +595,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -582,9 +612,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -599,9 +629,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -616,9 +646,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -633,9 +663,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -650,9 +680,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -667,9 +697,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -684,9 +714,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -701,9 +731,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -718,9 +748,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -735,9 +765,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -752,9 +782,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -769,9 +799,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -786,9 +816,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -803,9 +833,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -820,9 +850,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -837,9 +867,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -854,9 +884,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -871,9 +901,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -888,9 +918,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -905,9 +935,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -922,9 +952,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -939,9 +969,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -956,9 +986,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -973,9 +1003,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -990,9 +1020,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1007,9 +1037,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1024,9 +1054,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1041,9 +1071,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1058,9 +1088,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1075,9 +1105,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1092,9 +1122,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1109,9 +1139,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1126,9 +1156,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1143,9 +1173,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1160,9 +1190,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1177,9 +1207,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1194,9 +1224,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1211,9 +1241,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1228,9 +1258,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1245,9 +1275,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1262,9 +1292,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1279,9 +1309,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1296,9 +1326,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1313,9 +1343,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1330,9 +1360,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1347,9 +1377,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1364,9 +1394,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1381,9 +1411,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1398,9 +1428,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1415,9 +1445,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1432,9 +1462,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1449,9 +1479,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1466,9 +1496,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1483,9 +1513,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1500,9 +1530,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1517,9 +1547,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1534,9 +1564,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1551,9 +1581,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1568,9 +1598,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1586,9 +1616,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1603,9 +1633,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1620,9 +1650,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1637,9 +1667,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1654,9 +1684,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1671,9 +1701,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1688,9 +1718,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1706,9 +1736,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1723,9 +1753,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1740,9 +1770,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1757,9 +1787,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
@@ -1775,9 +1805,9 @@
 #'
 #' @format A data frame with 6 variables:
 #' \describe{
-#'   \item{\code{date}}{integer The date of the album which contains the
+#'   \item{\code{date}}{integer.The date of the album which contains the
 #'   music.}
-#'   \item{\code{music}}{facto. The name of the music. }
+#'   \item{\code{music}}{factor. The name of the music. }
 #'   \item{\code{popul}}{integer. The popularity of the music.}
 #'   \item{\code{chord}}{factor. The chord names of each music,
 #'   by order of occurrence in the music. }
