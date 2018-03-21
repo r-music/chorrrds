@@ -45,6 +45,13 @@
 #'
 "deg_maj"
 
+#' genre
+#'
+#' Accessory data with the genre for each artist in the package.
+#'
+"genre"
+
+
 #' ad_calcanhotto
 #'
 #' Data with information about the music chords of Adriana Calcanhotto.
