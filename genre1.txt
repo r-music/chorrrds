@@ -1,0 +1,107 @@
+Artist	Genre
+"""adoniran barbosa"""	Samba
+"""adriana calcanhotto"""	MPB
+"""alceu valenca"""	MPB
+"""alcione"""	Samba
+"""almir guineto"""	Samba
+"""ana carolina"""	MPB
+"""arlindo cruz"""	Samba
+"""belchior"""	MPB
+"""benito di paula"""	Samba
+"""beth carvalho"""	Samba
+"""bezerra da silva"""	Samba
+"""bruno e marrone"""	Sertanejo
+"""caetano veloso"""	MPB
+"""cartola"""	Samba
+"""cassia eller"""	Rock
+"""cazuza"""	Rock
+"""charlie brown jr"""	Rock
+"""chico buarque"""	Bossa nova
+"""chitaozinho e xororo"""	Sertanejo
+"""clara nunes"""	Samba
+"""cleber cauan"""	Sertanejo
+"""cristiano araujo"""	Sertanejo
+"""daniel"""	Sertanejo
+"""demonios da garoa"""	Samba
+"""detonautas"""	Rock
+"""diogo nogueira"""	Samba
+"""djavan"""	MPB
+"""dona ivone lara"""	Samba
+"""dorival caymmi"""	Bossa nova
+"""dudu nobre"""	Samba
+"""edson e hudson"""	Sertanejo
+"""eduardo costa"""	Sertanejo
+"""elis regina"""	MPB
+"""engenheiros do hawaii"""	Rock
+"""fagner"""	MPB
+"""felipe araujo"""	Sertanejo
+"""fernando sorocaba"""	Sertanejo
+"""fundo de quintal"""	Samba
+"""geraldo azevedo"""	Forró
+"""gilberto gil"""	MPB
+"""gusttavo lima"""	Sertanejo
+"""henrique e juliano"""	Sertanejo
+"""jads e jadson"""	Sertanejo
+"""jair rodrigues"""	Samba
+"""joao nogueira"""	Samba
+"""jorge aragao"""	Samba
+"""jorge ben jor"""	Samba
+"""jorge mateus"""	Sertanejo
+"""jorge vercillo"""	MPB
+"""jota quest"""	Rock
+"""katinguele"""	Samba
+"""kid abelha"""	Pop
+"""leandro e leonardo"""	Sertanejo
+"""leci brandao"""	Samba
+"""legiao urbana"""	Rock
+"""leoni"""	Rock
+"""luan santana"""	Sertanejo
+"""lucas lucco"""	Sertanejo
+"""luiz gonzaga"""	Forró
+"""lupcinio rodrigues"""	Samba
+"""maiara maraisa"""	Sertanejo
+"""mamonas assassinas"""	Rock
+"""marcos belutti"""	Sertanejo
+"""maria gadu"""	Bossa nova
+"""marilia mendonca"""	Sertanejo
+"""marisa monte"""	MPB
+"""martinho da vila"""	Samba
+"""matheus kauan"""	Sertanejo
+"""milionario e jose rico"""	Sertanejo
+"""milton nascimento"""	MPB
+"""mumuzinho"""	Samba
+"""nando reis"""	Rock
+"""nelson cavaquinho"""	Samba
+"""noel rosa musicas"""	Samba
+"""nx zero"""	Rock
+"""o rappa"""	Reggae
+"""os originais do samba"""	Samba
+"""os paralamas do sucesso"""	Rock
+"""paula fernandes"""	Sertanejo
+"""paulinho da viola"""	Samba
+"""pitty"""	Rock
+"""pixinguinha"""	Samba
+"""raul seixas"""	Rock
+"""reinaldo"""	Samba
+"""rita lee"""	Rita Lee
+"""roberta campos"""	MPB
+"""sambo"""	Samba
+"""sergio reis"""	Sertanejo
+"""seu jorge"""	MPB
+"""simone simaria as coleguinhas"""	Sertanejo
+"""simone"""	MPB
+"""skank"""	Rock
+"""supercombo"""	Pop
+"""thiago brava"""	Sertanejo
+"""tiao carreiro e pardinho"""	Sertanejo
+"""tim maia"""	MPB
+"""titas"""	Rock
+"""toquinho"""	Bossa nova
+"""tribalistas"""	Rock
+"""trio parada dura"""	Sertanejo
+"""vanessa da mata"""	MPB
+"""victor leo"""	Sertanejo
+"""ze neto cristiano"""	Sertanejo
+"""ze ramalho"""	Rock
+"""zeca baleiro"""	MPB
+"""zeze di camargo e luciano"""	Sertanejo
