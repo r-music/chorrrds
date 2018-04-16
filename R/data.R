@@ -69,7 +69,7 @@
 #' }
 "ad_calcanhotto"
 
-#' ad_barbosa
+#' adoniran_barbosa
 #'
 #' Data with information about the music chords of Adoniran Barbosa.
 #'
@@ -84,7 +84,7 @@
 #'   \item{\code{key}}{factor. The key for each music.}
 #'   \item{\code{artist}}{factor. The name of the artist}
 #' }
-
+"adoniran_barbosa"
 
 #' alceu_valenca
 #'
@@ -322,6 +322,23 @@
 #'   \item{\code{artist}}{factor. The name of the artist}
 #' }
 "cazuza"
+
+#' charlie_brown_jr
+#'
+#' Data with information about the music chords of Charlie Brown Jr.
+#'
+#' @format A data frame with 6 variables:
+#' \describe{
+#'   \item{\code{date}}{integer.The date of the album which contains the
+#'   music.}
+#'   \item{\code{music}}{factor. The name of the music. }
+#'   \item{\code{popul}}{integer. The popularity of the music.}
+#'   \item{\code{chord}}{factor. The chord names of each music,
+#'   by order of occurrence in the music. }
+#'   \item{\code{key}}{factor. The key for each music.}
+#'   \item{\code{artist}}{factor. The name of the artist}
+#' }
+"charlie_brown_jr"
 
 #' chico_buarque
 #'
@@ -748,6 +765,23 @@
 #'   \item{\code{artist}}{factor. The name of the artist}
 #' }
 "ivone_lara"
+
+#' jads_jadson
+#'
+#' Data with information about the music chords of Jads & Jadson.
+#'
+#' @format A data frame with 6 variables:
+#' \describe{
+#'   \item{\code{date}}{integer.The date of the album which contains the
+#'   music.}
+#'   \item{\code{music}}{factor. The name of the music. }
+#'   \item{\code{popul}}{integer. The popularity of the music.}
+#'   \item{\code{chord}}{factor. The chord names of each music,
+#'   by order of occurrence in the music. }
+#'   \item{\code{key}}{factor. The key for each music.}
+#'   \item{\code{artist}}{factor. The name of the artist}
+#' }
+"jads_jadson"
 
 #' jair_rodrigues
 #'
