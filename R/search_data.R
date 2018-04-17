@@ -7,17 +7,19 @@
 #' @return If a database with the corresponding searched name
 #'         is found, it's name is returned. If not, nothing is returned.
 #' @examples{
+#' \dontrun{
 #'   search_data("chico")
 #'   \dontshow{
 #'   search_data("jorge")
 #'   }
 #'  }
+#'}
 #' @export
 #'
 #'
 
 search_data <- function(name){
-  av_data <- data(package = "choRds")$results[ ,3]
+  av_data <- data(package = "chorrrds")$results[ ,3]
 
   for(i in 1:length(av_data)){
     cond <- grepl(name, av_data[i])
