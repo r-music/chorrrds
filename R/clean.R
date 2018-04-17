@@ -26,7 +26,7 @@ clean <- function(da, column = "chord", long = 15){
 
     names(pat) <- "chord"
 
-    filt <- da[as.character(da[ , column]) %!in% pat$chord, ]
+    filt <- da[as.character(not_in(da[ , column], pat$chord)), ]
     rem <- dim(da)[1] - dim(filt)[1]
     print(paste0(rem, " lines removed"))
     return(filt)

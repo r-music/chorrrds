@@ -14,17 +14,19 @@
 #'}
 NULL
 
-#  Negate %in% operator
+#  Negates match operator
 #'
-#' This function negates the %in% operator.
+#' This function negates the macth operator.
 #'
-#' @name '%!in%'
+#' @name not_in
 #' @keywords internal
 #' @export
 #' @examples{
 #' \dontrun{
-#'   this_is_not '%!in%' in_this
+#'   not_in(this_is_not, in_this)
 #'  }
 #'}
 
-'%!in%' <- function(x,y)!('%in%'(x,y))
+not_in <- function(x,y)!('%in%'(x,y))
+
+
