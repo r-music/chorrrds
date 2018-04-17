@@ -11,7 +11,7 @@ clean(da, column = "chord", long = 15)
 
 \item{column}{string. The column by which we want to make the cleaning.}
 
-\item{long}{numeric. The longest string we wish exists on our 
+\item{long}{numeric. The longest string we wish exists on our
 column.}
 }
 \value{
@@ -22,6 +22,8 @@ Clean data when there is some excessive long text on a column.
 }
 \examples{
 {
+\dontrun{
   clean(da  = da, column = "chord", long = 15)
  }
+}
 }

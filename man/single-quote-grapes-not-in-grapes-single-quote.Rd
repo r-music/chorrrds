@@ -5,9 +5,16 @@
 \alias{\%!in\%}
 \title{This function negates the %in% operator.}
 \usage{
-this_is_not '%!in%' in_this
+x \%!in\% y
 }
 \description{
 This function negates the %in% operator.
+}
+\examples{
+{
+\dontrun{
+  this_is_not '\%!in\%' in_this
+ }
+}
 }
 \keyword{internal}

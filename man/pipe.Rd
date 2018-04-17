@@ -3,10 +3,14 @@
 \name{\%>\%}
 \alias{\%>\%}
 \title{Pipe operator}
-\usage{
-lhs \%>\% rhs
-}
 \description{
 See \code{\link[magrittr]{\%>\%}} for more details.
+}
+\examples{
+{
+\dontrun{
+  lhs \\\%>\\\% rhs
+ }
+}
 }
 \keyword{internal}

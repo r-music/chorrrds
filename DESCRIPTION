@@ -10,7 +10,6 @@ Description: Extracts music chords from the CifraClub website <https://www.cifra
 Depends: R (>= 3.2.3)
 Suggests:
     ggplot2,
-    dplyr,
     knitr,
     network,
     stm

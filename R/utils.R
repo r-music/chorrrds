@@ -7,7 +7,11 @@
 #' @keywords internal
 #' @export
 #' @importFrom magrittr %>%
-#' @usage lhs \%>\% rhs
+#' @examples{
+#' \dontrun{
+#'   lhs \%>\% rhs
+#'  }
+#'}
 NULL
 
 #  Negate %in% operator
@@ -17,6 +21,10 @@ NULL
 #' @name '%!in%'
 #' @keywords internal
 #' @export
-#' @usage this_is_not '%!in%' in_this
+#' @examples{
+#' \dontrun{
+#'   this_is_not '%!in%' in_this
+#'  }
+#'}
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
