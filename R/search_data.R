@@ -7,12 +7,10 @@
 #' @return If a database with the corresponding searched name
 #'         is found, it's name is returned. If not, nothing is returned.
 #' @examples{
-#' \dontrun{
-#'   search_data("chico")
+#'    search_data("chico")
 #'   \dontshow{
 #'   search_data("jorge")
 #'   }
-#'  }
 #'}
 #' @export
 #'

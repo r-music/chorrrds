@@ -8,9 +8,8 @@
 #' @export
 #' @importFrom magrittr %>%
 #' @examples{
-#' \dontrun{
-#'   lhs \%>\% rhs
-#'  }
+#'
+#'   iris %>% as.matrix()
 #'}
 NULL
 
@@ -22,9 +21,9 @@ NULL
 #' @keywords internal
 #' @export
 #' @examples{
-#' \dontrun{
-#'   not_in(this_is_not, in_this)
-#'  }
+#' a <- "a"
+#' ab <- c("a", "b")
+#'   not_in(a, ab)
 #'}
 
 not_in <- function(x,y)!('%in%'(x,y))

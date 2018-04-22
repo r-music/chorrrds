@@ -22,8 +22,9 @@ Clean data when there is some excessive long text on a column.
 }
 \examples{
 {
-\dontrun{
-  clean(da  = da, column = "chord", long = 15)
- }
+
+library(chorrrds)
+data("caetano")
+  clean(da  = caetano, column = "chord", long = 15)
 }
 }

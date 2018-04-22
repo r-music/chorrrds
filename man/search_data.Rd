@@ -18,11 +18,9 @@ Search artists in the available package database.
 }
 \examples{
 {
-\dontrun{
-  search_data("chico")
+   search_data("chico")
   \dontshow{
   search_data("jorge")
   }
- }
 }
 }

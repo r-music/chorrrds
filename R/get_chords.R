@@ -9,11 +9,10 @@
 #' @return A database with the chords of the input songs, if
 #' found.
 #' @examples{
-#' \dontrun{
-#'   songs <- chorrrds::get_songs("chico-buarque")
-#'   get_chords(songs$url[1])
-#'   get_chords(songs$url[1])
-#'   }
+#' \donttest{
+#'   songs <- chorrrds::get_songs("tim-maia")
+#'   get_chords(songs$url[4])
+#'}
 #'}
 #' @export
 

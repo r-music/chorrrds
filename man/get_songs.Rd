@@ -18,11 +18,7 @@ Get songs names from an artist.
 }
 \examples{
 {
-\dontrun{
-  get_songs("chico-buarque")
-  \dontshow{
   get_songs("jorge")
-   }
- }
+  get_songs("los-hermanos")
 }
 }

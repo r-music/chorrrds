@@ -21,10 +21,7 @@ Get songs names from an artist.
 }
 \examples{
 {
-\dontrun{
-  songs <- chorrrds::get_songs("chico-buarque")
-  get_chords(songs$url[1])
-  get_chords(songs$url[1])
-  }
+  songs <- chorrrds::get_songs("tim-maia")
+  get_chords(songs$url[4])
 }
 }

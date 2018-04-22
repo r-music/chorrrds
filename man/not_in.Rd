@@ -11,9 +11,9 @@ This function negates the macth operator.
 }
 \examples{
 {
-\dontrun{
-  not_in(this_is_not, in_this)
- }
+a <- "a"
+ab <- c("a", "b")
+  not_in(a, ab)
 }
 }
 \keyword{internal}

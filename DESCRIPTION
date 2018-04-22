@@ -1,10 +1,10 @@
 Package: chorrrds
 Title: Music Chords Extraction
 Type: Package
-Version: 0.1.0
+Version: 0.1.4
 Author: Bruna Wundervald
 Maintainer: Bruna Wundervald <brunadaviesw@gmail.com>
-Description: Extracts music chords from the Cifraclub website <https://www.cifraclub.com.br/>.
+Description: Extracts music chords from the 'CifraClub' website <https://www.cifraclub.com.br/>.
 	The package also has functions for cleaning the extracted data and 
 	feature extraction.  
 Depends: R (>= 3.2.3)

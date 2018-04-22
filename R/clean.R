@@ -5,32 +5,32 @@
 #' @param da a data.frame.
 #' @param column  string. The column by which we want to make the cleaning.
 #' @param long numeric. The longest string we wish exists on our
-#' column.
+#' @param message logical. Should the function print how many lines
+#' were removed?
 #' @return A database, with the text cleaning done.
 #' @examples{
-#' \dontrun{
-#'   clean(da  = da, column = "chord", long = 15)
-#'  }
+#'\dontrun{
+#' data("caetano")
+#'   clean(da  = caetano, column = "chord", long = 15, message = TRUE)
+#'}
 #'}
 #' @export
 #'
-#'
 
-clean <- function(da, column = "chord", long = 15){
+clean <- function(da, column = "chord", long = 15, message = TRUE){
   if(column %in% names(da)){
-    pat <- da[ , column] %>%
-      as.factor() %>%
-      levels() %>%
-      as.data.frame() %>%
-      dplyr::filter(nchar(as.character(.)) > long)
+    pat <- da[ , column]
+    ind <-  (stringr::str_length(pat) < long)
+    filt <- da[ind, ]
 
-    names(pat) <- "chord"
-
-    filt <- da[as.character(not_in(da[ , column], pat$chord)), ]
     rem <- dim(da)[1] - dim(filt)[1]
-    print(paste0(rem, " lines removed"))
+    if(message){
+      print(paste0(rem, " lines removed"))
+    }
     return(filt)
   } else {
-    print("Column name not found.")
+    if(message){
+      print("Column name not found.")
+    }
   }
 }
