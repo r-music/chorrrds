@@ -1,5 +1,5 @@
 
-[![Travis-CI Build Status](https://travis-ci.org/brunaw/chords-mpb.svg?branch=master)](https://travis-ci.org/brunaw/choRds)
+[![Travis-CI Build Status](https://travis-ci.org/brunaw/chorrrds.svg?branch=master)](https://travis-ci.org/brunaw/chorrrds)
 
 Chords from brazilian popular music
 ========================================
