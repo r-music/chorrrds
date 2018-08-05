@@ -1,6 +1,6 @@
-#' get_songs
+#' get_chords
 #'
-#' Get songs names from an artist.
+#' Get chords from an artist.
 #'
 #' @param songs character. The song url.
 #' @param nf TRUE of FALSE. If the chords of a song are not found,

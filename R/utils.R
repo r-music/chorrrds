@@ -15,7 +15,7 @@ NULL
 
 #  Negates match operator
 #'
-#' This function negates the macth operator.
+#' This function negates the match operator.
 #'
 #' @name not_in
 #' @keywords internal
