@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_chords.R
 \name{get_chords}
 \alias{get_chords}
-\title{get_songs}
+\title{get_chords}
 \usage{
 get_chords(songs, nf = FALSE)
 }
@@ -17,11 +17,13 @@ A database with the chords of the input songs, if
 found.
 }
 \description{
-Get songs names from an artist.
+Get chords from an artist.
 }
 \examples{
 {
+\donttest{
   songs <- chorrrds::get_songs("tim-maia")
   get_chords(songs$url[4])
+}
 }
 }

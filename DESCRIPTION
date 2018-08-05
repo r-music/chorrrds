@@ -11,14 +11,13 @@ Depends: R (>= 3.2.3)
 Suggests:
     ggplot2,
     knitr,
-    network,
-    stm
+    network
 URL: https://github.com/brunaw/chorrrds
 BugReports: https://github.com/brunaw/chorrrds/issues
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Imports: jsonlite,
     httr,
     stringr,

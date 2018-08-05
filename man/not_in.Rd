@@ -2,12 +2,12 @@
 % Please edit documentation in R/utils.R
 \name{not_in}
 \alias{not_in}
-\title{This function negates the macth operator.}
+\title{This function negates the match operator.}
 \usage{
 not_in(x, y)
 }
 \description{
-This function negates the macth operator.
+This function negates the match operator.
 }
 \examples{
 {

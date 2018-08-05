@@ -18,7 +18,9 @@ Get songs names from an artist.
 }
 \examples{
 {
+\donttest{
   get_songs("jorge")
   get_songs("los-hermanos")
+}
 }
 }

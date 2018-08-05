@@ -4,15 +4,17 @@
 \alias{clean}
 \title{clean}
 \usage{
-clean(da, column = "chord", long = 15)
+clean(da, column = "chord", long = 15, message = TRUE)
 }
 \arguments{
 \item{da}{a data.frame.}
 
 \item{column}{string. The column by which we want to make the cleaning.}
 
-\item{long}{numeric. The longest string we wish exists on our
-column.}
+\item{long}{numeric. The longest string we wish exists on our}
+
+\item{message}{logical. Should the function print how many lines
+were removed?}
 }
 \value{
 A database, with the text cleaning done.
@@ -22,9 +24,9 @@ Clean data when there is some excessive long text on a column.
 }
 \examples{
 {
-
-library(chorrrds)
+\dontrun{
 data("caetano")
-  clean(da  = caetano, column = "chord", long = 15)
+  clean(da  = caetano, column = "chord", long = 15, message = TRUE)
+}
 }
 }

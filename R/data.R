@@ -1,6 +1,6 @@
 #' dist
 #'
-#' A simples measure of the chords distances in the circle
+#' A simple measure of the chords distances in the circle
 #' of fifths.
 #'
 #' @format A data frame with 3 variables:
@@ -8,7 +8,7 @@
 #'   \item{\code{prox}}{factor. The chord.}
 #'   \item{\code{dist}}{numeric. The distance from C in the
 #'   circle of fifths. }
-#'   \item{\code{dist_circle}}{integer. The order in the circle of
+#'   \item{\code{order}}{integer. The order in the circle of
 #'   fifths.}
 #' }
 "dist"
