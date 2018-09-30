@@ -28,4 +28,6 @@ NULL
 
 not_in <- function(x,y)!('%in%'(x,y))
 
+# Get rid of NOTEs
+globalVariables(c(".", "name", "data"))
 

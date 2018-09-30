@@ -16,6 +16,7 @@
 #'}
 #' @export
 
+
 get_chords <- function(songs, nf = FALSE){
   mm <- list()
   suppressWarnings(
@@ -49,7 +50,7 @@ get_chords <- function(songs, nf = FALSE){
       }
     } )
 
-  base <- plyr::ldply(mm, data.frame)
+  base <- mm %>% purrr::map_dfr(data.frame)
   base$music <- base$music %>%
     stringr::str_replace_all("-", " ") %>%
     stringr::str_replace_all("/", " ") %>%
