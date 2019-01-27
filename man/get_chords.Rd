@@ -17,7 +17,7 @@ A database with the chords of the input songs, if
 found.
 }
 \description{
-Get chords from an artist.
+Extracts music chords from an artist.
 }
 \examples{
 {

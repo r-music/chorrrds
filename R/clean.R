@@ -19,10 +19,10 @@
 
 clean <- function(da, column = "chord", long = 15, message = TRUE){
   if(column %in% names(da)){
-    pat <- da[ , column]
-    ind <-  (stringr::str_length(pat) < long)
-    filt <- da[ind, ]
-
+    filt <- da %>% 
+      dplyr::mutate(long_str = stringr::str_length(!!column)) %>% 
+      dplyr::filter(long_str <= long)
+  
     rem <- dim(da)[1] - dim(filt)[1]
     if(message){
       print(paste0(rem, " lines removed"))
@@ -34,3 +34,4 @@ clean <- function(da, column = "chord", long = 15, message = TRUE){
     }
   }
 }
+

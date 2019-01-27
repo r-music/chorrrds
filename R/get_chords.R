@@ -1,6 +1,6 @@
 #' get_chords
 #'
-#' Get chords from an artist.
+#' Extracts music chords from an artist.
 #'
 #' @param songs character. The song url.
 #' @param nf TRUE of FALSE. If the chords of a song are not found,
@@ -18,44 +18,51 @@
 
 
 get_chords <- function(songs, nf = FALSE){
-  mm <- list()
-  suppressWarnings(
-    if(length(songs) != 0){
-      for(j in 1:length(songs)){
-        cif <- paste0("https://www.cifraclub.com.br", songs[j]) %>%
-          readLines() %>%
-          XML::htmlTreeParse(asText = TRUE,
-                             useInternalNodes = TRUE,
-                             encoding = "utf-8")
-        chords <- cif %>%  XML::getNodeSet(path = "//pre/b",
-                                           fun = XML::xmlValue)
-
-        key <- cif %>%  XML::getNodeSet(path = "//span/a[@class=
+  
+  extract <- function(url){
+    cif <- paste0("https://www.cifraclub.com.br", url) %>%
+      readLines() %>%
+      XML::htmlTreeParse(asText = TRUE,
+                         useInternalNodes = TRUE,
+                         encoding = "utf-8")
+    
+    chord <- cif %>%  XML::getNodeSet(path = "//pre/b",
+                                      fun = XML::xmlValue) %>% 
+      purrr::as_vector()
+    
+    
+    key <- cif %>%  XML::getNodeSet(path = "//span/a[@class=
                                         'js-modal-trigger']",
-                                        fun = XML::xmlValue)
-        da <- plyr::ldply(chords, data.frame)
-
-        if(length(key) == 1 && length(chords) != 0){
-          names(da) <- "chord"
-          mm[[j]] <- data.frame(chord = da$chord,
-                                key = key[[1]],
-                                music = songs[j])
-        } else{
-          if(nf == TRUE){
-            mm[[j]] <-  data.frame(chord = "Not Found",
-                                   key = "Not Found",
-                                   music = songs[j])
-          }
-        }
-      }
-    } )
-
-  base <- mm %>% purrr::map_dfr(data.frame)
-  base$music <- base$music %>%
+                                    fun = XML::xmlValue)
+    
+    if(!is.null(chord)){
+      result <- data.frame(chord,
+                           key = key[[1]],
+                           music = url)
+    }
+    else{ if(nf == TRUE){
+      result <-  data.frame(chord = "Not Found",
+                            key = "Not Found",
+                            music = url)
+    }
+    }
+    return(result)
+    
+  }
+  
+  saf <- purrr::safely(extract, otherwise = NULL)
+  
+  suppressWarnings(
+    df <- songs %>% purrr::map(saf) %>%
+      purrr::map("result") %>% 
+      purrr::map_dfr(data.frame))
+  
+  df$music <- df$music %>%
     stringr::str_replace_all("-", " ") %>%
     stringr::str_replace_all("/", " ") %>%
     stringr::str_replace_all("^ *", "") %>%
     stringr::str_replace_all(" $", "")
-
-  return(base)
-}
+  
+  return(df)
+  
+} 
