@@ -10,12 +10,12 @@
 `chorrrds` is a package for `R` that scrapes the [Cifraclub](https://www.cifraclub.com.br/) website to
 download and organize music chords. It can be considered a package for 
 MIR (Music Information Retrieval), a broad area of computational
-music which extracts and processes music data, from the unstructured ones, as sound waves, to structured, as sheet music or chords.
+music which extracts and processes music data, from the unstructured ones, as sound waves, to structured, like sheet music or chords.
 
 Installation
 ------------------------
 
-You can install chorrrds from your favourite CRAN mirror, simply running:
+You can install chorrrds from your favorite CRAN mirror, simply running:
 
 ``` r
 install.packages("chorrrds")
@@ -36,7 +36,7 @@ The package currently has as its main functions:
   `get_songs()`; 
   - A function that extracts the chords of the song: `get_chords()`. 
   
-There are also some acessory objects and functions, that provides useful too use
+There are also some accessory objects and functions, that provides useful too use
 in combination with the music chords:
 
   - The `deg_maj` and `deg_min` dataframes, that contains all of the 
@@ -46,7 +46,7 @@ in combination with the music chords:
   by semitones and by steps in the circle, for each tonic chord; 
   - The `genre` dataframe, that contains the musical genre information
   for many Brazilian artists;
-  - The `all` dataframe, that contains the chords data for for many 
+  - The `all` dataframe, that contains the chords data for many 
   Brazilian artists; 
   - The `search_data()` function, that looks for an artist in the
   available data; 
