@@ -86,8 +86,10 @@ https://r-music.rbind.io/posts/2018-08-19-chords-analysis-with-the-chorrrds-pack
 <h4 style="padding:0px;margin:10px;">
 R for music data extraction and analysis
 </h4>
+
 See the [R-Music](https://github.com/r-music) organization on GitHub for 
-more `R` packages related to music data extraction and analysis. The R-Music [blog](https://r-music.rbind.io/) provides package introductions and examples.
+more `R` packages related to music data extraction and analysis. The [R-Music blog](https://r-music.rbind.io/) provides package introductions and examples.
+
 
 Citation
 ------------------------
