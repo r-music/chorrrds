@@ -4,7 +4,6 @@
 [![CRAN status](http://www.r-pkg.org/badges/version/chorrrds)](https://cran.r-project.org/package=chorrrds) [![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/chorrrds)](https://cran.r-project.org/package=chorrrds) [![Rdoc](http://www.rdocumentation.org/badges/version/chorrrds)](http://www.rdocumentation.org/packages/chorrrds) [![Travis-CI Build Status](https://travis-ci.org/r-music/chorrrds.svg?branch=master)](https://travis-ci.org/r-music/chorrrds) 
 
 
-
 `chorrrds`: A package for music chorrrds extraction. 
 ========================================
 
@@ -14,7 +13,7 @@ MIR (Music Information Retrieval), a broad area of computational
 music which extracts and processes music data, from the unstructured ones, as sound waves, to structured, as sheet music or chords.
 
 Installation
-*--------------------------------------------------------------*
+------------------------
 
 You can install chorrrds from your favourite CRAN mirror, simply running:
 
@@ -29,7 +28,7 @@ devtools::install_github("r-music/chorrrds")
 ```
 
 Functionalities
-*--------------------------------------------------------------*
+------------------------
 
 The package currently has as its main functions: 
 
@@ -64,7 +63,7 @@ help(package = "chorrrds")
 ```
   
 To be implemented
-*--------------------------------------------------------------*
+------------------------
 
 
   - [ ] Standardize the chords formats. 
@@ -75,7 +74,7 @@ To be implemented
   - [ ] The official `pkgdown` for `chorrrds`. 
   
 Examples and Resources
-*--------------------------------------------------------------*
+------------------------
 
 A tutorial about how to extract & analyze the data with the 
 `chorrrds` package is available at: 
@@ -91,7 +90,7 @@ See the [R-Music](https://github.com/r-music) organization on GitHub for
 more `R` packages related to music data extraction and analysis. The R-Music [blog](https://r-music.rbind.io/) provides package introductions and examples.
 
 Citation
-*--------------------------------------------------------------*
+------------------------
 
 To cite this package in publications, please use: 
 
@@ -121,19 +120,19 @@ citation('chorrrds')
 ```
 
 Contributing 
-*--------------------------------------------------------------*
+------------------------
 
 Contributions to this project are always highly incentivized. To do
 so, please be aware that `git` is our main tool for version control. 
 The minimal steps for a contribution are:
 
-  - 1. Fork this repository into your `GitHub` account and clone it
+   1. Fork this repository into your `GitHub` account and clone it
   the way you prefer. 
-  - 2. Do the changes, making sure everything is well documented, 
+   2. Do the changes, making sure everything is well documented, 
   examples are provided and checking if the package still correctly builds. 
-  - 3. Push your changes to `git` and create a new pull request in
+   3. Push your changes to `git` and create a new pull request in
   `GitHub`, explaining why and what are the changes made. 
-  - 4. Done! Wait for review & acceptance of the pull request :) 
+   4. Done! Wait for review & acceptance of the pull request :) 
   
 To contributors who are new to writing R packages, we recommend
 the ['R Packages' book](http://r-pkgs.had.co.nz/), by Hadley 
