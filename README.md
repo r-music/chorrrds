@@ -2,7 +2,7 @@
 **Author:** [Bruna Wundervald](http://brunaw.com/) **License:** [MIT](https://opensource.org/licenses/MIT)<br/>
 
 [![CRAN status](http://www.r-pkg.org/badges/version/chorrrds)](https://cran.r-project.org/package=chorrrds) [![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/chorrrds)](https://cran.r-project.org/package=chorrrds) [![Rdoc](http://www.rdocumentation.org/badges/version/chorrrds)](http://www.rdocumentation.org/packages/chorrrds) [![Travis-CI Build Status](https://travis-ci.org/r-music/chorrrds.svg?branch=master)](https://travis-ci.org/r-music/chorrrds) 
-[![Coverage status](https://codecov.io/gh/r-music/chorrrds/branch/master/graph/badge.svg)](https://codecov.io/github/r-music/chorrrds?branch=master)
+
 
 `chorrrds`: A package for music chorrrds extraction. 
 ========================================

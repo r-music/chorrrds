@@ -12,7 +12,8 @@ Suggests:
     ggplot2,
     knitr,
     network,
-    covr
+    covr,
+    testthat
 URL: https://github.com/r-music/chorrrds
 BugReports: https://github.com/r-music/chorrrds/issues
 License: MIT + file LICENSE
