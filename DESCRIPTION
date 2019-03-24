@@ -1,7 +1,7 @@
 Package: chorrrds
 Title: Music Chords Extraction
 Type: Package
-Version: 0.1.8
+Version: 0.1.9
 Author: Bruna Wundervald
 Maintainer: Bruna Wundervald <brunadaviesw@gmail.com>
 Description: Extracts music chords from the 'CifraClub' website <https://www.cifraclub.com.br/>.
@@ -11,10 +11,11 @@ Depends: R (>= 3.2.4)
 Suggests:
     ggplot2,
     knitr,
-    network
+    network,
+    covr
 URL: https://github.com/r-music/chorrrds
 BugReports: https://github.com/r-music/chorrrds/issues
-License: GPL-2
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
@@ -22,4 +23,6 @@ Imports: stringr,
     dplyr,
     XML,
     magrittr,
-    purrr
+    purrr,
+    zoo,
+    forcats
