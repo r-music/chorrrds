@@ -35,9 +35,9 @@ feature_extraction <- function(data){
         # minor chords
         minor = stringr::str_detect(chord, "m") * 1,
         # diminished
-        dimi = stringr::str_detect(chord, "(dim|\\??)") * 1,
+        dimi = stringr::str_detect(chord, "dim|\\°") * 1,
         # augmented
-        aum = stringr::str_detect(chord, "(aug|\\+)") * 1,
+        augm = stringr::str_detect(chord, "aug|\\+") * 1,
         # sus 
         sus = stringr::str_detect(chord, "(sus)") * 1,
         # chords with the 7th
