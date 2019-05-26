@@ -3,7 +3,7 @@
 #' Extracts music chords from an artist.
 #'
 #' @param songs character. The song url.
-#' @param nf TRUE of FALSE. If the chords of a song are not found,
+#' @param nf \code{TRUE} or \code{FALSE}. If the chords of a song are not found,
 #' should we return this information on the database?
 #'
 #' @return A database with the chords of the input songs, if
