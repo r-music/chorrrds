@@ -12,8 +12,7 @@ download and organize music chords. It can be considered a package for
 MIR (Music Information Retrieval), a broad area of computational
 music which extracts and processes music data, from the unstructured ones, as sound waves, to structured, like sheet music or chords.
 
-**If you enjoy this work, consider [buying me a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=89DH4WYL2M7XW&source=url), so I can keep developing and maintaining this package :)**
-
+**If you enjoy this work, consider [buying me a coffee in ko-fi](ko-fi.com/brunawundervald), or Paypal:**
 
 <p align="center">
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=89DH4WYL2M7XW&source=url">
@@ -21,6 +20,7 @@ music which extracts and processes music data, from the unstructured ones, as so
   </a>
 </p>
 
+**so I can keep developing and maintaining this package :)**
 
 Installation
 ------------------------
