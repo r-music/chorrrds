@@ -3,8 +3,6 @@
 
 [![CRAN status](http://www.r-pkg.org/badges/version/chorrrds)](https://cran.r-project.org/package=chorrrds) [![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/chorrrds)](https://cran.r-project.org/package=chorrrds) [![Rdoc](http://www.rdocumentation.org/badges/version/chorrrds)](http://www.rdocumentation.org/packages/chorrrds) [![Travis-CI Build Status](https://travis-ci.org/r-music/chorrrds.svg?branch=master)](https://travis-ci.org/r-music/chorrrds) 
 
-**If you enjoy this work, consider [buying me a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=89DH4WYL2M7XW&source=url), so I can keep developing and maintaining this package :).**
-
 
 `chorrrds`: A package for music chorrrds extraction. 
 ========================================
@@ -13,6 +11,16 @@
 download and organize music chords. It can be considered a package for 
 MIR (Music Information Retrieval), a broad area of computational
 music which extracts and processes music data, from the unstructured ones, as sound waves, to structured, like sheet music or chords.
+
+**If you enjoy this work, consider [buying me a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=89DH4WYL2M7XW&source=url), so I can keep developing and maintaining this package :)**
+
+
+<p align="center">
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=89DH4WYL2M7XW&source=url">
+    <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" />
+  </a>
+</p>
+
 
 Installation
 ------------------------
