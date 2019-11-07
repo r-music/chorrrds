@@ -2,13 +2,8 @@
 #'
 #' Extracts music chords from an artist.
 #'
-<<<<<<< Updated upstream
-#' @param songs character. The song url.
-#' @param nf \code{TRUE} or \code{FALSE}. If the chords of a song are not found,
-=======
 #' @param song_url character. The song url.
 #' @param nf TRUE of FALSE. If the chords of a song are not found,
->>>>>>> Stashed changes
 #' should we return this information on the database?
 #'
 #' @return A database with the chords of the input songs, if
