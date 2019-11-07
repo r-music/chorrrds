@@ -2,8 +2,13 @@
 #'
 #' Extracts music chords from an artist.
 #'
+<<<<<<< Updated upstream
 #' @param songs character. The song url.
+#' @param nf \code{TRUE} or \code{FALSE}. If the chords of a song are not found,
+=======
+#' @param song_url character. The song url.
 #' @param nf TRUE of FALSE. If the chords of a song are not found,
+>>>>>>> Stashed changes
 #' should we return this information on the database?
 #'
 #' @return A database with the chords of the input songs, if
@@ -17,7 +22,7 @@
 #' @export
 
 
-get_chords <- function(songs, nf = FALSE){
+get_chords <- function(song_url, nf = FALSE){
   
   extract <- function(url){
     cif <- paste0("https://www.cifraclub.com.br", url) %>%
@@ -26,43 +31,58 @@ get_chords <- function(songs, nf = FALSE){
                          useInternalNodes = TRUE,
                          encoding = "utf-8")
     
-    chord <- cif %>%  XML::getNodeSet(path = "//pre/b",
+    chords <- cif %>%  XML::getNodeSet(path = "//pre/b",
                                       fun = XML::xmlValue) %>% 
       purrr::as_vector()
-    
     
     key <- cif %>%  XML::getNodeSet(path = "//span/a[@class=
                                         'js-modal-trigger']",
                                     fun = XML::xmlValue)
     
-    if(!is.null(chord)){
-      result <- data.frame(chord,
+    if(!is.null(chords)){
+      result <- data.frame(chords,
                            key = key[[1]],
-                           music = url)
+                           song = url)
     }
     else{ if(nf == TRUE){
       result <-  data.frame(chord = "Not Found",
                             key = "Not Found",
-                            music = url)
+                            song = url)
     }
     }
     return(result)
     
   }
   
+  if(is.data.frame(song_url) & "url" %in% names(songs)){
+    song_url <- song_url %>% dplyr::pull(url) %>% 
+      as.vector()
+  }
+  
+  
   saf <- purrr::safely(extract, otherwise = NULL)
+
   
   suppressWarnings(
-    df <- songs %>% purrr::map(saf) %>%
+    df <- song_url %>% purrr::map(saf) %>%
       purrr::map("result") %>% 
-      purrr::map_dfr(data.frame))
+      purrr::map_dfr(data.frame)
+    )
   
-  df$music <- df$music %>%
+
+  parsed_names <- df$song %>%
     stringr::str_replace_all("-", " ") %>%
     stringr::str_replace_all("/", " ") %>%
     stringr::str_replace_all("^ *", "") %>%
-    stringr::str_replace_all(" $", "")
+    stringr::str_replace_all(" $", "") %>% 
+    stringr::str_split(" ", n = 2)
   
+  df <- df %>% 
+    dplyr::mutate(
+      artist = purrr::map_chr(parsed_names, 1),
+      song = purrr::map_chr(parsed_names, 2)) %>% 
+    dplyr::mutate_if(is.character, funs(stringr::str_to_title(.)))
+      
   return(df)
   
 } 

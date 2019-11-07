@@ -15,6 +15,8 @@
 
 get_songs <- function(artist){
   
+  artist <- stringr::str_replace_all(artist, " ", "-")
+  
   urls <- paste0("https://www.cifraclub.com.br/", artist) %>%
     readLines() %>%
     XML::htmlTreeParse(asText = TRUE,
@@ -26,11 +28,12 @@ get_songs <- function(artist){
     stringr::str_replace_all("-", " ") %>%
     stringr::str_replace_all("/", " ") %>%
     stringr::str_replace_all("^ *", "") %>%
-    stringr::str_replace_all(" $", "")
+    stringr::str_replace_all(" $", "") %>% 
+    stringr::str_to_title()
 
-  da <- data.frame(url = urls, name = songs) 
-  da <- da %>% dplyr::filter(!(stringr::str_detect(
-    string = name, pattern = "letra")))
+  df <- data.frame(url = urls, song = songs) 
+  df <- df %>% dplyr::filter(!(stringr::str_detect(
+    string = song, pattern = "letra"))) 
   
-  return(da)
+  return(df)
 }
