@@ -52,6 +52,8 @@ in combination with the music chords:
   available data; 
   - The `clean_data()` function, that cleans the chords in case
   something weird (such as lyrics) were wrongly scraped. 
+  - The `feature_extraction()` function, that extracts useful features to 
+  represent the characteristics of the chords. 
   
 All of the functions and documentation can be found with:
 
@@ -65,12 +67,11 @@ help(package = "chorrrds")
 To be implemented
 ------------------------
 
-
-  - [ ] Standardize the chords formats. 
-  - [ ] Link the package to the syntax provided by the 
+  - [ ] Standardization of the chords formats. 
+  - [X] Link the package to the syntax provided by the 
   [`tabr`](https://leonawicz.github.io/tabr/index.html)
   package.
-  - [ ] The functions to perform feature extraction in the chords. 
+  - [X] Functions to perform the feature extraction of the chords. 
   - [ ] The official `pkgdown` for `chorrrds`. 
   
 Examples and Resources
@@ -89,6 +90,18 @@ R for music data extraction and analysis
 
 See the [R-Music](https://github.com/r-music) organization on GitHub for 
 more `R` packages related to music data extraction and analysis. The [R-Music blog](https://r-music.rbind.io/) provides package introductions and examples.
+
+
+`tabr` connection
+------------------------
+
+The usability of this package can be highly increased when in combination with 
+other MIR tools, such as the [`tabr`](https://leonawicz.github.io/tabr/) package, which
+offers a music notation syntax converter for the packages. Please 
+find more information at: https://leonawicz.github.io/tabr/reference/to_tabr.html
+
+Besides its many other functions, the `tabr` package has a chord chart rendering, that 
+might be especially interesting for users of the `chorrrds` package: https://leonawicz.github.io/tabr/articles/tabr-chordchart.html
 
 
 Citation
