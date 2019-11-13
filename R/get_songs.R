@@ -1,5 +1,3 @@
-globalVariables(".data")
-
 #' get_songs
 #'
 #' Get songs names from an artist.
