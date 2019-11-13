@@ -17,5 +17,5 @@ test_that("chords returned as expected", {
   expect_is(chords, "data.frame")
   expect_true(all(sapply(chords, is.character)))
   expect_equal(dim(chords), c(54, 4))
-  expect_equal(names(chords), c("chords", "key", "song", "artist"))
+  expect_equal(names(chords), c("chord", "key", "song", "artist"))
 })

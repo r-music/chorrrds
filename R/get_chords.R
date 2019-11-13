@@ -23,7 +23,7 @@ get_chords <- function(song_url, nf = FALSE){
     chords <- rvest::html_nodes(x, "pre b") %>% rvest::html_text()
     url <- gsub("-", " ", gsub("^/|/$", "", url))
     if(length(chords)){
-      result <- data.frame(chords = chords, key = key, song = url, 
+      result <- data.frame(chord = chords, key = key, song = url, 
                            stringsAsFactors = FALSE)
     } else if(nf == TRUE){
       result <-  data.frame(chord = "Not Found", key = "Not Found", song = url, 
