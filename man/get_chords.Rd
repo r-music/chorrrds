@@ -4,10 +4,10 @@
 \alias{get_chords}
 \title{get_chords}
 \usage{
-get_chords(songs, nf = FALSE)
+get_chords(song_url, nf = FALSE)
 }
 \arguments{
-\item{songs}{character. The song url.}
+\item{song_url}{character. The song url.}
 
 \item{nf}{TRUE of FALSE. If the chords of a song are not found,
 should we return this information on the database?}
@@ -22,8 +22,8 @@ Extracts music chords from an artist.
 \examples{
 {
 \donttest{
-  songs <- chorrrds::get_songs("tim-maia")
-  get_chords(songs$url[4])
+  songs <- get_songs("tim-maia")
+  get_chords(songs$url[2])
 }
 }
 }
