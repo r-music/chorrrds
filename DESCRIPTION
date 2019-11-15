@@ -1,7 +1,7 @@
 Package: chorrrds
 Title: Music Chords Extraction
 Type: Package
-Version: 0.1.9.1
+Version: 0.1.9.2
 Author: Bruna Wundervald
 Maintainer: Bruna Wundervald <brunadaviesw@gmail.com>
 Description: Extracts music chords from the 'CifraClub' website <https://www.cifraclub.com.br/>.
