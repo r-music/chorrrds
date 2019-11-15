@@ -10,73 +10,54 @@
 #' found.
 #' @examples{
 #' \donttest{
-#'   songs <- chorrrds::get_songs("tim-maia")
-#'   get_chords(songs$url[4])
+#'   songs <- get_songs("tim-maia")
+#'   get_chords(songs$url[2])
 #'}
 #'}
 #' @export
-
-
 get_chords <- function(song_url, nf = FALSE){
   
   extract <- function(url){
-    cif <- paste0("https://www.cifraclub.com.br", url) %>%
-      readLines() %>%
-      XML::htmlTreeParse(asText = TRUE,
-                         useInternalNodes = TRUE,
-                         encoding = "utf-8")
-    
-    chords <- cif %>%  XML::getNodeSet(path = "//pre/b",
-                                      fun = XML::xmlValue) %>% 
-      purrr::as_vector()
-    
-    key <- cif %>%  XML::getNodeSet(path = "//span/a[@class=
-                                        'js-modal-trigger']",
-                                    fun = XML::xmlValue)
-    
-    if(!is.null(chords)){
-      result <- data.frame(chords,
-                           key = key[[1]],
-                           song = url)
+    x <- xml2::read_html(paste0("https://www.cifraclub.com.br", url))
+    key <- rvest::html_node(x, "#cifra_tom a") %>% rvest::html_text()
+    chords <- rvest::html_nodes(x, "pre b") %>% rvest::html_text()
+    url <- gsub("-", " ", gsub("^/|/$", "", url))
+    if(length(chords)){
+      result <- data.frame(chord = chords, key = key, song = url, 
+                           stringsAsFactors = FALSE)
+    } else if(nf == TRUE){
+      result <-  data.frame(chord = "Not Found", key = "Not Found", song = url, 
+                            stringsAsFactors = FALSE)
     }
-    else{ if(nf == TRUE){
-      result <-  data.frame(chord = "Not Found",
-                            key = "Not Found",
-                            song = url)
-    }
-    }
-    return(result)
-    
+    result
   }
   
-  if(is.data.frame(song_url) & "url" %in% names(songs)){
+  if(is.data.frame(song_url) & "url" %in% names(song_url)){
     song_url <- song_url %>% dplyr::pull(url) %>% 
       as.vector()
   }
   
-  
   saf <- purrr::safely(extract, otherwise = NULL)
 
-  
   suppressWarnings(
     df <- song_url %>% purrr::map(saf) %>%
       purrr::map("result") %>% 
       purrr::map_dfr(data.frame)
     )
-  
 
-  parsed_names <- df$song %>%
-    stringr::str_replace_all("-", " ") %>%
-    stringr::str_replace_all("/", " ") %>%
-    stringr::str_replace_all("^ *", "") %>%
-    stringr::str_replace_all(" $", "") %>% 
-    stringr::str_split(" ", n = 2)
+  parsed_names <- strsplit(df$song, "/")
   
   df <- df %>% 
     dplyr::mutate(
+<<<<<<< HEAD
       artist = purrr::map_chr(parsed_names, 1),
       song = purrr::map_chr(parsed_names, 2)) %>% 
     dplyr::mutate_if(is.character, dplyr::funs(stringr::str_to_title(.)))
+=======
+      artist = sapply(parsed_names, "[", 1),
+      song = sapply(parsed_names, "[", 2)) %>% 
+    dplyr::mutate_at(vars(artist, song), list(~stringr::str_to_title(.)))
+>>>>>>> fixes-updates
       
   return(df)
   

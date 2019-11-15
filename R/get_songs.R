@@ -12,28 +12,12 @@
 #'}
 #'}
 #' @export
-
 get_songs <- function(artist){
-  
   artist <- stringr::str_replace_all(artist, " ", "-")
-  
-  urls <- paste0("https://www.cifraclub.com.br/", artist) %>%
-    readLines() %>%
-    XML::htmlTreeParse(asText = TRUE,
-                       useInternalNodes = TRUE,
-                       encoding = "utf-8") %>%
-    XML::xpathSApply("//ul[@id='js-a-songs']//li//a
-                       [@class='art_music-link']/@href")
-  songs <- urls %>%
-    stringr::str_replace_all("-", " ") %>%
-    stringr::str_replace_all("/", " ") %>%
-    stringr::str_replace_all("^ *", "") %>%
-    stringr::str_replace_all(" $", "") %>% 
-    stringr::str_to_title()
-
-  df <- data.frame(url = urls, song = songs) 
-  df <- df %>% dplyr::filter(!(stringr::str_detect(
-    string = song, pattern = "letra"))) 
-  
-  return(df)
+  x <- xml2::read_html(paste0("https://www.cifraclub.com.br/", artist)) %>% 
+    rvest::html_nodes("#js-a-songs li .art_music-link")
+  urls <- rvest::html_attr(x, "href")
+  songs <- rvest::html_attr(x, "title")
+  df <- data.frame(url = urls, song = songs, stringsAsFactors = FALSE) 
+  dplyr::filter(df, !grepl("letra", .data[["url"]])) 
 }

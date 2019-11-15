@@ -22,8 +22,8 @@ Extracts music chords from an artist.
 \examples{
 {
 \donttest{
-  songs <- chorrrds::get_songs("tim-maia")
-  get_chords(songs$url[4])
+  songs <- get_songs("tim-maia")
+  get_chords(songs$url[2])
 }
 }
 }
