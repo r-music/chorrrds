@@ -49,15 +49,9 @@ get_chords <- function(song_url, nf = FALSE){
   
   df <- df %>% 
     dplyr::mutate(
-<<<<<<< HEAD
-      artist = purrr::map_chr(parsed_names, 1),
-      song = purrr::map_chr(parsed_names, 2)) %>% 
-    dplyr::mutate_if(is.character, dplyr::funs(stringr::str_to_title(.)))
-=======
       artist = sapply(parsed_names, "[", 1),
       song = sapply(parsed_names, "[", 2)) %>% 
     dplyr::mutate_at(vars(artist, song), list(~stringr::str_to_title(.)))
->>>>>>> fixes-updates
       
   return(df)
   
