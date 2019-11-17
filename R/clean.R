@@ -21,7 +21,7 @@ clean <- function(da, column = "chord", long = 15, message = TRUE){
   if(column %in% names(da)){
     filt <- da %>% 
       dplyr::mutate(long_str = stringr::str_length(!!column)) %>% 
-      dplyr::filter(long_str <= long)
+      dplyr::filter(.data[["long_str"]] <= long)
   
     rem <- dim(da)[1] - dim(filt)[1]
     if(message){

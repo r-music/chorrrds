@@ -17,7 +17,7 @@
 #'
 
 search_data <- function(name){
-  av_data <- data(package = "chorrrds")$results[ ,3]
+  av_data <- utils::data(package = "chorrrds")$results[ ,3]
 
   for(i in 1:length(av_data)){
     cond <- grepl(name, av_data[i])
