@@ -19,10 +19,8 @@
 chords_ngram <- function(data, n = 2){
   if(!is.null(data)){
     chords_ngram <- data %>% 
-      dplyr::mutate(date = 
-                      forcats::fct_explicit_na(date)) %>% 
       dplyr::mutate(
-        chords_ngram = zoo::rollapply(chord, n, paste0, 
+        chords_ngram = zoo::rollapply(.data[["chord"]], n, paste0, 
                                       collapse = " ", 
                                       align = 'right', 
                                       partial = TRUE, 

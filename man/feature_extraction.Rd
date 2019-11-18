@@ -12,7 +12,7 @@ from.}
 }
 \value{
 A dataframe with the chords set add with  
-logical features, to indicate if each chord is:
+logical features (1 or 0), to indicate if each chord is:
 }
 \description{
 Extracts features from a chords dataset.
@@ -20,7 +20,7 @@ Extracts features from a chords dataset.
 \examples{
 {
 \donttest{
-  songs <- chorrrds::get_songs("tim-maia")
+  songs <- get_songs("tim-maia")
   chords <- get_chords(songs$url[4])
   feature_extraction(chords)
 }
