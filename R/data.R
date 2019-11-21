@@ -37,7 +37,7 @@
 #'
 #' @format A data frame with 3 variables:
 #' \describe{
-#'   \item{\code{key}}{factor. Keys ordened by the circle of fifths.}
+#'   \item{\code{key}}{factor. Keys ordered by the circle of fifths.}
 #'   \item{\code{minor.rel}}{factor. Relative minors of the key
 #'   in the previous column. }
 #'   \item{\code{rep}}{num. A number indicating if the key scale is

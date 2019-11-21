@@ -31,7 +31,7 @@ You can install chorrrds from your favorite CRAN mirror, simply running:
 install.packages("chorrrds")
 ```
 
-You can also install the latest versios of chorrrds from the R-Music GitHub organization with:
+You can also install the latest version of chorrrds from the R-Music GitHub organization with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("r-music/chorrrds")
