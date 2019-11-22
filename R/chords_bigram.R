@@ -15,19 +15,12 @@
 #'}
 #'}
 #' @export
-
 chords_ngram <- function(data, n = 2){
-  if(!is.null(data)){
-    chords_ngram <- data %>% 
-      dplyr::mutate(
-        chords_ngram = zoo::rollapply(.data[["chord"]], n, paste0, 
-                                      collapse = " ", 
-                                      align = 'right', 
-                                      partial = TRUE, 
-                                      fill = "")
-      )
+  f <- function(x){
+    i2 <- seq_along(x)
+    i <- (i2 - n + 1)
+    i[i < 1] <- 1
+    sapply(mapply(`:`, i, i2), function(j) paste(x[j], collapse = " "))
   }
-  return(chords_ngram)
+  dplyr::mutate(data, chords_ngram = f(.data[["chord"]]))
 }
-
-

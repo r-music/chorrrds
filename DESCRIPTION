@@ -2,12 +2,15 @@ Package: chorrrds
 Title: Music Chords Extraction
 Type: Package
 Version: 0.1.9.2
-Author: Bruna Wundervald
-Maintainer: Bruna Wundervald <brunadaviesw@gmail.com>
+Authors@R: 
+    c(
+      person(given = "Bruna", family = "Wundervald", email = "brunadaviesw@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8163-220X")),
+      person(given = "Matthew", family = "Leonawicz", role = c("ctb"), comment = c(ORCID = "0000-0001-9452-2771"))
+    )
 Description: Extracts music chords from the 'CifraClub' website <https://www.cifraclub.com.br/>.
 	The package also has functions for cleaning the extracted data and 
-	feature extraction.  
-Depends: R (>= 3.2.4)
+	feature extraction.
+Depends: R (>= 2.10)
 Suggests:
     ggplot2,
     knitr,
@@ -27,5 +30,4 @@ Imports:
     rvest,
     magrittr,
     purrr,
-    zoo,
     forcats
