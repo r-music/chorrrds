@@ -18,6 +18,6 @@ get_songs <- function(artist){
     rvest::html_nodes("#js-a-songs li .art_music-link")
   urls <- rvest::html_attr(x, "href")
   songs <- rvest::html_attr(x, "title")
-  df <- data.frame(url = urls, song = songs, stringsAsFactors = FALSE) 
+  df <- dplyr::tibble(url = urls, song = songs) 
   dplyr::filter(df, !grepl("letra", .data[["url"]])) 
 }
