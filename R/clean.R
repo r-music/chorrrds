@@ -2,7 +2,7 @@
 #'
 #' Clean data when there is some excessive long text on a column.
 #'
-#' @param da a data.frame.
+#' @param data a data.frame.
 #' @param column  string. The column by which we want to make the cleaning.
 #' @param long numeric. The longest string we wish exists on our
 #' @param message logical. Should the function print how many lines
@@ -11,21 +11,21 @@
 #' @examples{
 #'\dontrun{
 #' data("caetano")
-#'   clean(da  = caetano, column = "chord", long = 15, message = TRUE)
+#'   clean(data  = caetano, column = "chord", long = 15, message = TRUE)
 #'}
 #'}
 #' @export
 #'
 
-clean <- function(da, column = "chord", long = 15, message = TRUE){
-  if(column %in% names(da)){
-    filt <- da %>% 
+clean <- function(data, column = "chord", long = 15, message = TRUE){
+  if(column %in% names(data)){
+    filt <- data %>% 
       dplyr::mutate(long_str = stringr::str_length(!!column)) %>% 
       dplyr::filter(.data[["long_str"]] <= long)
   
-    rem <- dim(da)[1] - dim(filt)[1]
+    rem <- dim(data)[1] - dim(filt)[1]
     if(message){
-      print(paste0(rem, " lines removed"))
+      print(paste0(rem, " rows removed"))
     }
     return(filt)
   } else {

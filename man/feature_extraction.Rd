@@ -11,7 +11,7 @@ feature_extraction(data)
 from.}
 }
 \value{
-A dataframe with the chords set add with  
+A dataframe with the chords set added with  
 logical features (1 or 0), to indicate if each chord is:
 }
 \description{

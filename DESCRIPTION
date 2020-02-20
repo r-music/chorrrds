@@ -1,7 +1,7 @@
 Package: chorrrds
 Title: Music Chords Extraction
 Type: Package
-Version: 0.1.9.2
+Version: 0.1.9.3
 Authors@R: 
     c(
       person(given = "Bruna", family = "Wundervald", email = "brunadaviesw@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8163-220X")),

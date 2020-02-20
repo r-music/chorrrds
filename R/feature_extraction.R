@@ -5,20 +5,9 @@
 #' @param data dataframe. The chords dataset to exract the features
 #' from.
 #'
-#' @return A dataframe with the chords set add with  
+#' @return A dataframe with the chords set added with  
 #' logical features (1 or 0), to indicate if each chord is: 
-# - minor 
-# - diminished
-# - augmented
-# - sus 
-# - chords with the 7th
-# - chords with the major 7th
-# - chords with the 6th
-# - chords with the 4th
-# - chords with the augmented 5th
-# - chords with the diminished 5th
-# - chords with the 9th
-# - chords with varying bass 
+# minor, diminished,  augmented, sus, chords with the 7th, chords with the major 7th, chords with the 6th, chords with the 4th, chords with the augmented 5th, chords with the diminished 5th,  chords with the 9th, chords with varying bass 
 #' @examples{
 #' \donttest{
 #'   songs <- get_songs("tim-maia")

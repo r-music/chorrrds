@@ -54,5 +54,4 @@ get_chords <- function(song_url, nf = FALSE){
     dplyr::mutate_at(c("artist", "song"), list(~stringr::str_to_title(.)))
       
   return(dplyr::as_tibble(df))
-  
 } 

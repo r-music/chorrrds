@@ -4,10 +4,10 @@
 \alias{clean}
 \title{clean}
 \usage{
-clean(da, column = "chord", long = 15, message = TRUE)
+clean(data, column = "chord", long = 15, message = TRUE)
 }
 \arguments{
-\item{da}{a data.frame.}
+\item{data}{a data.frame.}
 
 \item{column}{string. The column by which we want to make the cleaning.}
 
@@ -26,7 +26,7 @@ Clean data when there is some excessive long text on a column.
 {
 \dontrun{
 data("caetano")
-  clean(da  = caetano, column = "chord", long = 15, message = TRUE)
+  clean(data  = caetano, column = "chord", long = 15, message = TRUE)
 }
 }
 }
