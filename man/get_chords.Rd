@@ -7,14 +7,15 @@
 get_chords(song_url, nf = FALSE)
 }
 \arguments{
-\item{song_url}{character. The song url.}
+\item{song_url}{The song URLs to be used for the chords collection. 
+Can be either a character vector or straightforwardly the result of the 
+`get_songs()` function.}
 
-\item{nf}{TRUE of FALSE. If the chords of a song are not found,
-should we return this information on the database?}
+\item{nf}{logical. If the chords of a song are not found,
+should we return this information in the final result?}
 }
 \value{
-A database with the chords of the input songs, if
-found.
+An object of type `tibble` with the chords sequences, key, song names and name of the artist.
 }
 \description{
 Extracts music chords from an artist.

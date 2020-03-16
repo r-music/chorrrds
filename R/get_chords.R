@@ -2,12 +2,14 @@
 #'
 #' Extracts music chords from an artist.
 #'
-#' @param song_url character. The song url.
-#' @param nf TRUE of FALSE. If the chords of a song are not found,
-#' should we return this information on the database?
+#' @param song_url The song URLs to be used for the chords collection. 
+#' Can be either a character vector or straightforwardly the result of the 
+#' `get_songs()` function. 
+#' @param nf logical. If the chords of a song are not found,
+#' should we return this information in the final result?
 #'
-#' @return A database with the chords of the input songs, if
-#' found.
+#' @return An object of type `tibble` with the chords sequences, key, song names and name of the artist.
+#' 
 #' @examples{
 #' \donttest{
 #'   songs <- get_songs("tim-maia")
@@ -23,23 +25,25 @@ get_chords <- function(song_url, nf = FALSE){
     chords <- rvest::html_nodes(x, "pre b") %>% rvest::html_text()
     url <- gsub("-", " ", gsub("^/|/$", "", url))
     if(length(chords)){
-      result <- data.frame(chord = chords, key = key, song = url, 
+      result <- data.frame(chord = chords, 
+                           key = key, 
+                           song = url, 
                            stringsAsFactors = FALSE)
     } else if(nf == TRUE){
-      result <-  data.frame(chord = "Not Found", key = "Not Found", song = url, 
+      result <-  data.frame(chord = "Not Found", 
+                            key = "Not Found", 
+                            song = url, 
                             stringsAsFactors = FALSE)
     }
     result
   }
   
   if(is.data.frame(song_url) & "url" %in% names(song_url)){
-    song_url <- song_url %>% dplyr::pull(url) %>% 
-      as.vector()
-  }
-  
-  
-  saf <- purrr::safely(extract, otherwise = NULL)
+    artist <- unique(song_url$artist)[1]
+    song_url <- song_url$url
+  } 
 
+  saf <- purrr::safely(extract, otherwise = NULL)
   
   suppressWarnings(
     df <- song_url %>% purrr::map(saf) %>%
@@ -51,8 +55,7 @@ get_chords <- function(song_url, nf = FALSE){
     df <- data.frame(
       chord = "Not Found", 
       key = "Not Found", 
-      song = "Not Found",
-      artist = artist
+      song = "Not Found"
     )
     
     warning("These was an error with the data collection
@@ -68,7 +71,7 @@ and the chords could not be found.")
     dplyr::mutate(
       artist = sapply(parsed_names, "[", 1),
       song = sapply(parsed_names, "[", 2)) %>% 
-    dplyr::mutate_at(c("artist", "song"), list(~stringr::str_to_title(.)))
+    dplyr::mutate_at(c("artist", "song"), list(~stringr::str_to_title(.))) 
       
   return(dplyr::as_tibble(df))
 } 

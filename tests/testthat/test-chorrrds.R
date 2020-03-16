@@ -8,8 +8,8 @@ test_that("songs returned as expected", {
   expect_is(x, "data.frame")
   expect_true(all(sapply(x, is.character)))
   expect_true(nrow(x) > 100)
-  expect_equal(names(x), c("url", "song"))
-  expect_false(any(grepl("letra", x$url)))
+  expect_equal(names(x), c("url", "song", "artist"))
+  expect_false(any(grepl("letra", as.vector(x$url))))
 })
 
 test_that("chords returned as expected", {

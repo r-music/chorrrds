@@ -10,11 +10,12 @@ get_songs(artist)
 \item{artist}{character. The artist's name.}
 }
 \value{
-If the artist (or band) is found, it is returned a database
-with the song names and URLs.
+If the artist (or band) is found, an object of type 
+`tibble` with the song names, URLs  and artist is retuned. 
+The URLs are to be later used in the `get_chords()` function.
 }
 \description{
-Get songs names from an artist.
+Get songs names and URLs for an artist.
 }
 \examples{
 {
