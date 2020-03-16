@@ -37,14 +37,31 @@ get_chords <- function(song_url, nf = FALSE){
       as.vector()
   }
   
+  
   saf <- purrr::safely(extract, otherwise = NULL)
 
+  
   suppressWarnings(
     df <- song_url %>% purrr::map(saf) %>%
       purrr::map("result") %>% 
       purrr::map_dfr(data.frame)
     )
 
+  if(nrow(df) == 0){
+    df <- data.frame(
+      chord = "Not Found", 
+      key = "Not Found", 
+      song = "Not Found",
+      artist = artist
+    )
+    
+    warning("These was an error with the data collection
+and the chords could not be found.")
+    
+    print(dplyr::as_tibble(df))
+    return(dplyr::as_tibble(df))
+  }
+  
   parsed_names <- strsplit(df$song, "/")
   
   df <- df %>% 

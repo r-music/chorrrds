@@ -20,18 +20,19 @@
 clean <- function(data, column = "chord", long = 15, message = TRUE){
   if(column %in% names(data)){
     filt <- data %>% 
-      dplyr::mutate(long_str = stringr::str_length(!!column)) %>% 
-      dplyr::filter(.data[["long_str"]] <= long)
+      dplyr::mutate(long_str = stringr::str_length(.data[[column]])) %>% 
+      dplyr::filter(.data[["long_str"]] <= long) %>% 
+      dplyr::select(-long_str)
   
-    rem <- dim(data)[1] - dim(filt)[1]
+    rem <- nrow(data) - nrow(filt)
     if(message){
       print(paste0(rem, " rows removed"))
     }
-    return(filt)
   } else {
     if(message){
       print("Column name not found.")
     }
   }
+  return(filt)
 }
 
