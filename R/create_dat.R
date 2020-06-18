@@ -30,8 +30,8 @@ create_dat <- function(artist, track){
                 paste0(notes, flats, minor),
                 paste0(notes, flats, sharps, minor))
   
-  artist   <- chorrrds::get_songs("The Weeknd")
-  song     <- artist[which(artist$song == "Acquainted"), 1]
+  artist   <- chorrrds::get_songs(artist)
+  song     <- artist[which(artist$song == track), 1]
   html_url <- xml2::read_html(paste0("https://www.cifraclub.com.br",
                                      song))
   
