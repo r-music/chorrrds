@@ -149,7 +149,8 @@ create_net <- function(chords_dat){
       lyric = 
         eliminate_words(first_sentence = .data[["lyric"]], 
                         second_sentence = .data[["second_sentence"]])) %>% 
-    dplyr::select(-second_sentence)
+    dplyr::select(-second_sentence) %>% 
+    dplyr::mutate(chord = stringr::str_squish(chord))
   
   return(chords_net)
 }
