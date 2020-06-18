@@ -3,6 +3,8 @@
 export("%>%")
 export(chords_ngram)
 export(clean)
+export(create_dat)
+export(create_net)
 export(feature_extraction)
 export(get_chords)
 export(get_songs)

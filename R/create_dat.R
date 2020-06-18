@@ -60,8 +60,8 @@ create_dat <- function(artist, track){
   chords_dat <- chords_dat[ grep("--", chords_dat$V2, invert = TRUE), ]
   chords_dat[,1] <- sub("( *)(\\w+)", "\\2\\1", chords_dat[,1])    # put all the first chords at the beginning of the verse (keeping he same spaces between more than two chords)
   suppressWarnings(chords_dat <- chords_dat %>%
-                     dplyr::mutate_at( c("V2"), dplyr::funs(lead), n = 1 ))
-  chords_dat <- chords_dat[ complete.cases(chords_dat), ]
+                     dplyr::mutate_at( c("V2"), dplyr::funs(dplyr::lead), n = 1 ))
+  chords_dat <- chords_dat[ stats::complete.cases(chords_dat), ]
   
   for (i in 1:nrow(chords_dat)) {                                  # take only chords that are linked to some lyrics
     
