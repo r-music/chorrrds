@@ -75,6 +75,7 @@ create_dat <- function(artist, track){
   
   chords_dat <- chords_dat[ grep("Intro:", chords_dat$V1, invert = TRUE), ]
   chords_dat <- chords_dat[ grep("--", chords_dat$V2, invert = TRUE), ]
+
   chords_dat[,1] <- sub("( *)(\\w+)", "\\2\\1", chords_dat[,1]) # put all the first chords at the beginning of the verse (keeping he same spaces between more than two chords)
   chords_dat <- chords_dat %>%
                      dplyr::mutate_at( c("V2"), dplyr::funs(lead), n = 1 )
