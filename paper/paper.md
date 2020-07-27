@@ -237,7 +237,7 @@ artist, as their frequencies are much higher than the less common
 chords. 
 
 
-![Figure 1: The 15 most frequent chords in Janis Joplin's songs and densities of the proportion of each extracted feature in the songs.](figure_1.png){ width=70% }
+![The 15 most frequent chords in Janis Joplin's songs and densities of the proportion of each extracted feature in the songs.](figure_1.png){ width=70% }
 
 
 As for Figure 2, continuing on the harmonic pattern exploration, 
@@ -253,7 +253,7 @@ many other details of the songs that are not being considered here,
 but that is already a big piece of information. 
 
 
-![Figure 2: The 15 songs with the highest number of different chords.](figure_2.png){ width=30% }
+![The 15 songs with the highest number of different chords.](figure_2.png){ width=30% }
 
 
 In Figure 3, on the other hand, we present the results of a 
@@ -277,7 +277,7 @@ to the most "basic" songs, that are limited to using
 simpler versions of the chords. 
 
 
-![Figure 3: Cluster results.](figure_3.png){ width=50% }
+![Cluster results.](figure_3.png){ width=50% }
 
 
 # Acknowledgements
