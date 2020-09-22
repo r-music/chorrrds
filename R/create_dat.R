@@ -4,7 +4,7 @@
 #'
 #' @param artist character. The artist's name.
 #' @param track character. The song's title.
-#' @return An object of type `data.frame` with the song chords and lyrics is retuned. 
+#' @return An object of type `tibble` with the song chords and lyrics is returned. 
 #' The object is to be later used in the `create_net()` function to get accurate connections between chords and words.
 #' 
 #' @examples{
@@ -16,8 +16,11 @@
 
 create_dat <- function(artist, track){
   
+  oldw <- getOption("warn")
+  options(warn = -1)
+  
   # Chords
-  notes     = c('A','B','C','D','E','F','G')
+  notes     = c('a','b','c','d','e','f','g')
   flats     = 'b'
   minor     = 'm'
   sharps    = '#'
@@ -28,7 +31,8 @@ create_dat <- function(artist, track){
                 paste0(notes, flats, sharps),
                 paste0(notes, minor, sharps),
                 paste0(notes, flats, minor),
-                paste0(notes, flats, sharps, minor))
+                paste0(notes, flats, sharps, minor)
+  )
   
   artist   <- chorrrds::get_songs(artist)
   song     <- artist[which(artist$song == track), 1]
@@ -38,11 +42,12 @@ create_dat <- function(artist, track){
   chords_lyrics <- rvest::html_nodes(html_url, "pre") %>% 
     rvest::html_text()
   
-  chords_lyrics <- 
+  chords_lyrics <-                 # this removes the 7th
     chords_lyrics %>% 
     stringr::str_remove_all(pattern = "[0-9]|[-][0-9][-]|\\||[0-9][br]|~")
   
   chords <- dplyr::tibble(V1 = sapply(chords_lyrics, function(x) strsplit(x, "\n")[[1]], USE.NAMES=FALSE))
+  chords <- tolower(chords$V1)
   
   chords_dat <- as.data.frame(cbind(rep(NA, nrow(chords)/2),
                                     rep(NA, nrow(chords)/2)))
@@ -56,31 +61,66 @@ create_dat <- function(artist, track){
     
   }
   
-  chords_dat <- chords_dat[ grep("Intro:", chords_dat$V1, invert = TRUE), ]
-  chords_dat <- chords_dat[ grep("--", chords_dat$V2, invert = TRUE), ]
-  chords_dat[,1] <- sub("( *)(\\w+)", "\\2\\1", chords_dat[,1])    # put all the first chords at the beginning of the verse (keeping he same spaces between more than two chords)
-  suppressWarnings(chords_dat <- chords_dat %>%
-                     dplyr::mutate_at( c("V2"), dplyr::funs(dplyr::lead), n = 1 ))
-  chords_dat <- chords_dat[ stats::complete.cases(chords_dat), ]
-  
-  for (i in 1:nrow(chords_dat)) {                                  # take only chords that are linked to some lyrics
+  for (i in 1:nrow(chords_dat)) {
     
-    if( nchar(chords_dat[i, 1]) > nchar(chords_dat[i, 2]) ) {
-      
-      nch <- nchar(chords_dat[i, 1]) - nchar(chords_dat[i, 2])
-      chords_dat[i, 1] <- stringr::str_sub(chords_dat[i, 1], 1, stringr::str_length(chords_dat[i, 1])-nch)
-      
+    if(is.na(chords_dat$V1[i]) == FALSE){
+      chords_dat$V2[i] <- chords_dat$V1[i]
     }
+    
+    if(is.na(chords_dat$V2[i]) == FALSE){
+      chords_dat$V1[i] <- chords_dat$V2[i]
+    }
+    
   }
   
+  chords_dat <- chords_dat[ grep("Intro:", chords_dat$V1, invert = TRUE), ]
+  chords_dat <- chords_dat[ grep("--", chords_dat$V2, invert = TRUE), ]
+  chords_dat[,1] <- sub("( *)(\\w+)", "\\2\\1", chords_dat[,1]) # put all the first chords at the beginning of the verse (keeping he same spaces between more than two chords)
+  chords_dat <- chords_dat %>%
+                     dplyr::mutate_at( c("V2"), dplyr::funs(lead), n = 1 )
+  chords_dat <- chords_dat[ complete.cases(chords_dat), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == "")), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == " ")), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == "  ")), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == "   ")), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == "    ")), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == "     ")), ]
+  chords_dat <- chords_dat[ !apply(chords_dat, 1, function(x) any(x == "      ")), ]
+  chords_dat$V3 <- NA
+  
+  for (i in 1:nrow(chords_dat)) {
+    
+    if(any(stringr::str_split(chords_dat$V1[i], "\\W+")[[1]] %in% all_notes[all_notes != "a"]) == TRUE){
+      
+      chords_dat$V3[i] <- 1
+      
+    }
+    
+    if(any(stringr::str_split(chords_dat$V2[i], "\\W+")[[1]] %in% all_notes[all_notes != "a"]) == TRUE){
+      
+      chords_dat$V3[i] <- 2
+      
+    }
+    
+  }
+  chords_dat <- chords_dat[chords_dat$V3 == 1,]
+  chords_dat <- chords_dat[ complete.cases(chords_dat), ]
+  chords_dat$V3 <- NULL
+
   chords_dat <- chords_dat[!apply(chords_dat == "", 1, all), ]
   chords_dat$V2 <- trimws(chords_dat$V2, "l")
   chords_dat$V2 <- paste(" ", chords_dat$V2)
-  if(rlang::is_empty(which(chords_dat[, 2] == "  ")) == FALSE){           # remove occasional blank rows (e.g., chords_dat[[9]])
+  if(rlang::is_empty(which(chords_dat[, 2] == "  ")) == FALSE){           # remove occasional blank rows
     chords_dat <- chords_dat[-which(chords_dat[, 2] == "  "), ]
   }
   rownames(chords_dat) <- NULL
   rownames(chords_dat) <- as.numeric(rownames(chords_dat))
   colnames(chords_dat) <- c("chord", "lyric")
+  
+  chords_dat <- as_tibble(chords_dat)
+  chords_dat$chord <- gsub("\\(.*\\)", "", chords_dat$chord)
+  
   return(chords_dat)
+  
+  options(warn = oldw)
 }
