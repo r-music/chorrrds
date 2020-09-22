@@ -75,7 +75,6 @@ create_dat <- function(artist, track){
   
   chords_dat <- chords_dat[ grep("Intro:", chords_dat$V1, invert = TRUE), ]
   chords_dat <- chords_dat[ grep("--", chords_dat$V2, invert = TRUE), ]
-
   chords_dat[,1] <- sub("( *)(\\w+)", "\\2\\1", chords_dat[,1]) # put all the first chords at the beginning of the verse (keeping he same spaces between more than two chords)
   chords_dat <- chords_dat %>%
                      dplyr::mutate_at( c("V2"), dplyr::funs(lead), n = 1 )
@@ -111,7 +110,7 @@ create_dat <- function(artist, track){
   chords_dat <- chords_dat[!apply(chords_dat == "", 1, all), ]
   chords_dat$V2 <- trimws(chords_dat$V2, "l")
   chords_dat$V2 <- paste(" ", chords_dat$V2)
-  if(rlang::is_empty(which(chords_dat[, 2] == "  ")) == FALSE){           # remove occasional blank rows (e.g., chords_dat[[9]])
+  if(rlang::is_empty(which(chords_dat[, 2] == "  ")) == FALSE){           # remove occasional blank rows
     chords_dat <- chords_dat[-which(chords_dat[, 2] == "  "), ]
   }
   rownames(chords_dat) <- NULL
@@ -119,6 +118,8 @@ create_dat <- function(artist, track){
   colnames(chords_dat) <- c("chord", "lyric")
   
   chords_dat <- as_tibble(chords_dat)
+  chords_dat$chord <- gsub("\\(.*\\)", "", chords_dat$chord)
+  
   return(chords_dat)
   
   options(warn = oldw)

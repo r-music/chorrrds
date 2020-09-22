@@ -118,12 +118,16 @@ create_net <- function(chords_dat){
         for( j in 1:stringr::str_count(substring(chords_dat[i, 1], 1, nchar(chords_dat[i, 2])), "\\S+") ) {
           
           chords_net[ match(as.numeric(do.call(paste0, expand.grid(i,j))),
-                            sort(as.numeric(do.call(paste0, expand.grid(1:sum(stats::na.omit(stringr::str_count(chords_dat[, 1], "\\S+"))), 1:max(stringr::str_count(substring(chords_dat[, 1], 1, nchar(chords_dat[, 2])), "\\S+"))))))), 1 ] <- substring( chords_dat[i, 1],                                                         # find chords in verse i
-                                                                                                                                                                                                                                    sort(unique(stats::na.omit(stringr::str_locate(chords_dat[i, 1], all_notes)[,1])))[j],    # from this position
+                            sort(as.numeric(do.call(paste0, expand.grid(1:sum(na.omit(stringr::str_count(chords_dat[, 1], "\\S+"))), 1:max(stringr::str_count(substring(chords_dat[, 1], 1, nchar(chords_dat[, 2])), "\\S+"))))))), 1 ] <- substring( chords_dat[i, 1],
+                                                                                                                                                                                                                                                      which(!is.na(stringr::str_locate(chords_dat$chord[[i]], strsplit(chords_dat$chord, " ")[[i]])[,1]))[j],
+                                                                                                                                                                                                                                                      ifelse(stringr::str_count(substring(chords_dat[i, 1], 1, nchar(chords_dat[i, 2])), "\\S+") > j, 
+                                                                                                                                                                                                                                                             which(!is.na(stringr::str_locate(chords_dat$chord[[i]], strsplit(chords_dat$chord, " ")[[i]])[,1]))[j+1], 
+                                                                                                                                                                                                                                                             nchar(chords_dat$chord[[i]]))
+                            )
         }
         
       } else { chords_net[match(as.numeric(do.call(paste0, expand.grid(i,j))),
-                                sort(as.numeric(do.call(paste0, expand.grid(1:sum(stats::na.omit(stringr::str_count(chords_dat[, 1], "\\S+"))), 1:max(stringr::str_count(substring(chords_dat[, 1], 1, nchar(chords_dat[, 2])), "\\S+"))))))), 1 ] <- chords_dat[i, 1] }
+                                sort(as.numeric(do.call(paste0, expand.grid(1:sum(na.omit(stringr::str_count(chords_dat[, 1], "\\S+"))), 1:max(stringr::str_count(substring(chords_dat[, 1], 1, nchar(chords_dat[, 2])), "\\S+"))))))), 1 ] <- chords_dat[i, 1] }
       
     }
   }
@@ -134,24 +138,23 @@ create_net <- function(chords_dat){
     for ( k in 1:stringr::str_count(substring(chords_dat[i, 1], 1, nchar(chords_dat[i, 2])), "\\S+") ){
       
       chords_net[match(as.numeric(do.call(paste0, expand.grid(i,k))),
-                       sort(as.numeric(do.call(paste0, expand.grid(1:sum(stats::na.omit(stringr::str_count(chords_dat[, 1], "\\S+"))), 1:max(stringr::str_count(substring(chords_dat[, 1], 1, nchar(chords_dat[, 2])), "\\S+"))))))), 2 ] <- suppressWarnings(findMin(chords_dat[i, 1], chords_dat[i, 2], k)) 
+                       sort(as.numeric(do.call(paste0, expand.grid(1:sum(na.omit(stringr::str_count(chords_dat[, 1], "\\S+"))), 1:max(stringr::str_count(substring(chords_dat[, 1], 1, nchar(chords_dat[, 2])), "\\S+"))))))), 2 ] <- findMin(as.character(chords_dat[i, 1]), as.character(chords_dat[i, 2]), k)
       
     }
   }
   
-  chords_net <- chords_net[stats::complete.cases(chords_net$chord), ]
+  chords_net <- chords_net[complete.cases(chords_net$chord), ]
   rownames(chords_net) <- NULL
   rownames(chords_net) <- as.numeric(rownames(chords_net))
   chords_net <- chords_net %>%
     dplyr::mutate(
-      second_sentence = dplyr::lead(lyric, n = 1)) %>% 
+      second_sentence = lead(lyric, n = 1)) %>% 
     dplyr::rowwise() %>% 
     dplyr::mutate(
       lyric = 
-        eliminate_words(first_sentence = .data[["lyric"]], 
-                        second_sentence = .data[["second_sentence"]])) %>% 
-    dplyr::select(-second_sentence) %>% 
-    dplyr::mutate(chord = stringr::str_squish(chord))
+        eliminate_words(first_sentence = lyric, 
+                        second_sentence = second_sentence)) %>% 
+    dplyr::select(-second_sentence)
   
   chords_net <- chords_net[ !apply(chords_net, 1, function(x) any(x == "")), ]
   chords_net$chord <- trimws(chords_net$chord, "l")
